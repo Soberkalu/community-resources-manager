@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM - Inventory</title>
+  <link rel="stylesheet" href="inventory.css">
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar">
+    <div class="logo">CRM</div>
+    <ul>
+      <li onclick="location.href='index.html'">Dashboard</li>
+      <li onclick="location.href='donations.html'">Donations</li>
+      <li onclick="location.href='volunteers.html'">Volunteers</li>
+      <li class="active">Inventory</li>
+      <li onclick="location.href='events.html'">Events</li>
+      <li onclick="location.href='reports.html'">Reports</li>
+      <li id="logout">Logout</li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header>
+      <h1>Inventory</h1>
+      <button id="addInventoryBtn">Add Inventory Item</button>
+    </header>
+
+    <table id="inventoryTable">
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Inventory rows will appear here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Add Inventory Modal -->
+  <div id="inventoryModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add Inventory Item</h2>
+      <form id="inventoryForm">
+        <input type="text" id="itemName" placeholder="Item Name" required>
+        <input type="text" id="itemCategory" placeholder="Category (Food/Clothes/Supplies)" required>
+        <input type="number" id="itemQuantity" placeholder="Quantity" required>
+        <input type="number" id="itemThreshold" placeholder="Low Stock Threshold" required>
+        <button type="submit">Add Item</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="inventory.js"></script>
+</body>
+</html>

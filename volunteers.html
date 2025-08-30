@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM - Volunteers</title>
+  <link rel="stylesheet" href="volunteers.css">
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar">
+    <div class="logo">CRM</div>
+    <ul>
+      <li onclick="location.href='dashboard.html'">Dashboard</li>
+      <li onclick="location.href='donations.html'">Donations</li>
+      <li class="active">Volunteers</li>
+      <li onclick="location.href='inventory.html'">Inventory</li>
+      <li onclick="location.href='events.html'">Events</li>
+      <li onclick="location.href='reports.html'">Reports</li>
+      <li id="logout">Logout</li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header>
+      <h1>Volunteers</h1>
+      <button id="addVolunteerBtn">Add Volunteer</button>
+    </header>
+
+    <table id="volunteerTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email / Phone</th>
+          <th>Role</th>
+          <th>Hours Worked</th>
+          <th>Assigned Events</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Volunteer rows will appear here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Add Volunteer Modal -->
+  <div id="volunteerModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add Volunteer</h2>
+      <form id="volunteerForm">
+        <input type="text" id="volunteerName" placeholder="Full Name" required>
+        <input type="text" id="volunteerContact" placeholder="Email or Phone" required>
+        <input type="text" id="volunteerRole" placeholder="Role (e.g., Helper)" required>
+        <input type="number" id="volunteerHours" placeholder="Hours Worked" value="0" required>
+        <input type="text" id="volunteerEvents" placeholder="Assigned Events (comma-separated)">
+        <button type="submit">Add Volunteer</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="volunteers.js"></script>
+</body>
+</html>
